@@ -15,7 +15,7 @@ def btcgold():
     return render_template("story.html")
 
 
-@app.route('/', methods=['POST'])
+@app.route('/readstory', methods=['POST'])
 def upload_files():
     uploaded_file = request.files['file']
     filename = uploaded_file.filename
