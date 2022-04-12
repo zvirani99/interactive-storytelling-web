@@ -8,17 +8,10 @@ app.config['UPLOAD_PATH'] = 'uploads'
 @app.route("/")
 @app.route("/home")
 def index():
-
     return render_template("index.html")
 
 
-
-@app.route("/story")
-def btcgold():
-    return render_template("story.html")
-
-
-@app.route('/readstory', methods=['POST'])
+@app.route('/', methods=['POST'])
 def upload_files():
     uploaded_file = request.files['file']
     filename = uploaded_file.filename
