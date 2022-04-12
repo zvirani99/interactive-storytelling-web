@@ -5,6 +5,7 @@ app.config['UPLOAD_EXTENSIONS'] = ['.xml']
 app.config['UPLOAD_PATH'] = 'uploads'
 
 @app.route("/")
+@app.route("/home")
 def index():
     return render_template("index.html")
 
