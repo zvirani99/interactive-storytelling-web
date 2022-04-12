@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template, make_response, abort, os
+from flask import Flask, request, render_template, make_response, abort
+import os
 
 app = Flask(__name__)
 app.config['UPLOAD_EXTENSIONS'] = ['.xml']
@@ -7,7 +8,9 @@ app.config['UPLOAD_PATH'] = 'uploads'
 @app.route("/")
 @app.route("/home")
 def index():
+
     return render_template("index.html")
+
 
 
 @app.route("/story")
@@ -30,3 +33,4 @@ def upload_files():
 if __name__ == "__main__":
 
     app.run(debug=True, passthrough_errors=True)
+
