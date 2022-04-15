@@ -11,8 +11,7 @@ def index():
 
 
 @app.route('/', methods=['POST'])
-def upload_files():
-    print("Going to story.html")
+def story():
     return render_template("story.html")
 
 
