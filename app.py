@@ -12,17 +12,10 @@ def index():
 
 @app.route('/', methods=['POST'])
 def upload_files():
-    uploaded_file = request.files['file']
-    filename = uploaded_file.filename
-    if filename != '':
-        file_ext = os.path.splitext(filename)[1]
-        # if file_ext not in app.config['UPLOAD_EXTENSIONS']:
-        #     abort(400)
-        uploaded_file.save(os.path.join(app.config['UPLOAD_PATH'], filename))
+    print("Going to story.html")
     return render_template("story.html")
 
 
 if __name__ == "__main__":
-
     app.run(debug=True, passthrough_errors=True)
 
